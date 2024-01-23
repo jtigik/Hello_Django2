@@ -7,7 +7,13 @@ from django.shortcuts import render
 def home(request):
     print('Home!')
     
+    context = {
+        'text': 'Estamos na Home',
+        'title': ' Home'
+    }
+    
     return render(
         request, 
-        'home.html'
+        'home/index.html',
+        context,
     )

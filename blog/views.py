@@ -7,7 +7,11 @@ def blog(request):
     
     return render(
         request, 
-        'blog.html'
+        'blog/index.html',
+        {
+            'text': 'Estamos no Blog',
+            'title': ' Blog'
+        }
     )
 
 
@@ -16,5 +20,9 @@ def exemplo(request):
     
     return render(
         request, 
-        'exemplo.html'
+        'blog/exemplo.html',
+        {
+            'text': 'Estamos no Exemplo',
+            'title': ' Exemplo'
+        }
     )
