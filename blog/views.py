@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import Http404
 from blog.data import posts
 
 def blog(request):
@@ -21,14 +22,20 @@ def post(request, post_id):
         if post['id'] == post_id:
             found_post = post
             break
+        
+    if found_post is None:
+        raise Http404('Post não encontrado!')
+        
+    context = {
+        # 'title': found_post['title'] + ' - ',
+        'title': 'Post ' + str(post_id),
+        'post': found_post
+    }
     
     return render(
         request, 
         'blog/post.html',
-        {
-            'title': 'Post',
-            'post': found_post
-        }
+        context
     )
 
 def exemplo(request):
