@@ -1,7 +1,7 @@
 {
     "builds": [
         {
-            "src": "Hello_Django_2/HelloProject/wsgi.py",
+            "src": "HelloProject/wsgi.py",
             "use": "@vercel/python",
             "config": {
                 "maxLambdaSize": "15mb",
@@ -12,7 +12,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "Hello_Django_2/HelloProject/wsgi.py"
+            "dest": "HelloProject/wsgi.py"
         }
     ]
 }
